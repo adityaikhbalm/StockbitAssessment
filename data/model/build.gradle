@@ -1,0 +1,10 @@
+apply plugin: 'com.android.library'
+apply from: '../../android_commons.gradle'
+apply plugin: 'kotlin-kapt'
+
+dependencies {
+    implementation KotlinLibraries.kotlin
+    implementation Libraries.gson
+    implementation Libraries.roomRunTime
+    annotationProcessor Libraries.roomCompiler
+}
