@@ -1,0 +1,22 @@
+apply plugin: 'com.android.library'
+apply from: '../../android_commons.gradle'
+apply from: '../../android_core_dependencies.gradle'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android'
+
+android {
+    defaultConfig {
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildFeatures.viewBinding = true
+}
+
+dependencies {
+    // COMMON
+    implementation project(Modules.common)
+    // DATA modules
+    implementation project(Modules.domain)
+    // KOIN
+    implementation Libraries.koin
+    implementation Libraries.koinViewModel
+}

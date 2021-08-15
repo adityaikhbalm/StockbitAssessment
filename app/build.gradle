@@ -6,18 +6,19 @@ android {
         applicationId ApplicationId.id
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-    dataBinding {
-        enabled true
-    }
+    buildFeatures.viewBinding = true
 }
 
 dependencies {
     // COMMON
     implementation project(Modules.common)
+    // FEATURES
+    implementation project(Modules.home)
     // DATA modules
     implementation project(Modules.local)
     implementation project(Modules.remote)
     implementation project(Modules.repository)
+    implementation project(Modules.domain)
     // NAVIGATION
     implementation project(Modules.navigation)
     // KOIN

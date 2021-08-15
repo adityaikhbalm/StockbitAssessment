@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:weightSum="3"
+    android:paddingHorizontal="20dp"
+    android:paddingVertical="13dp"
+    android:background="@color/cardColor">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="3dp">
+
+            <TextView
+                android:id="@+id/textName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="@color/textColorActive"
+                android:layout_gravity="center"
+                android:text="BTC"/>
+
+            <TextView
+                android:id="@+id/textFullName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:textColor="@color/textColorNormal"
+                android:layout_marginStart="5dp"
+                android:layout_gravity="center"
+                android:text="Bitcoin"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textVolume"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textColorNormal"
+            android:textSize="12sp"
+            android:text="Vol 0" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textPrice"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:textColor="@color/textColorActive"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:letterSpacing="0.05"
+        android:text="0"/>
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardPercent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="15dp"
+            android:padding="10dp"
+            app:cardCornerRadius="5dp"
+            app:cardBackgroundColor="@color/shimmerCard">
+
+            <TextView
+                android:id="@+id/textPercent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="0.00%"
+                android:textColor="@color/textColorActive"
+                android:textStyle="bold" />
+        </com.google.android.material.card.MaterialCardView>
+    </FrameLayout>
+</LinearLayout>

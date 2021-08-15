@@ -7,6 +7,9 @@ object Modules {
 
     val navigation = ":navigation"
 
+    val home = ":features:home"
+    val login = ":features:login"
+
     val common = ":common"
     val commonTest = ":common_test"
 
@@ -14,6 +17,7 @@ object Modules {
     val remote = ":data:remote"
     val model = ":data:model"
     val repository = ":data:repository"
+    val domain = ":data:domain"
 }
 
 object Releases {
@@ -27,24 +31,24 @@ object Versions {
     val compileSdk = 30
     val minSdk = 23
     val targetSdk = 30
-    val appCompat = "1.1.0-alpha02"
-    val coreKtx = "1.1.0"
-    val constraintLayout = "1.1.3"
+    val appCompat = "1.2.0"
+    val coreKtx = "1.6.0"
+    val constraintLayout = "2.1.0"
     val junit = "4.12"
     val androidTestRunner = "1.1.2-alpha02"
     val espressoCore = "3.2.0-alpha02"
-    val retrofit = "2.8.1"
+    val retrofit = "2.9.0"
     val retrofitCoroutines = "0.9.2"
     val retrofitGson = "2.8.1"
-    val gson = "2.8.5"
-    val okHttp = "3.12.1"
+    val gson = "2.8.2"
+    val okHttp = "4.9.1"
     val coroutines = "1.4.3"
-    val koin = "2.0.1"
+    val koin = "3.1.2"
     val timber = "4.7.1"
     val lifecycle = "2.2.0"
-    val nav = "2.0.0"
+    val nav = "2.3.5"
     val room = "2.3.0"
-    val recyclerview = "1.0.0"
+    val recyclerview = "1.0.4"
     val safeArgs = "1.1.1"
     val glide = "4.12.0"
     val archCoreTest = "2.0.0"
@@ -52,12 +56,17 @@ object Versions {
     val mockk = "1.11.0"
     val fragmentTest = "1.1.0-alpha06"
     val databinding = "3.3.2"
+    val scarlet = "0.1.12"
+    val activity = "1.3.1"
+    val fragment = "1.3.6"
+    val material = "1.4.0"
+    val swipe = "1.1.0"
 }
 
 object Libraries {
     // KOIN
-    val koin = "io.insert-koin:koin-android:${Versions.koin}"
-    val koinViewModel = "io.insert-koin:koin-android-viewmodel:${Versions.koin}"
+    val koin = "io.insert-koin:koin-core:${Versions.koin}"
+    val koinViewModel = "io.insert-koin:koin-android:${Versions.koin}"
     // ROOM
     val roomCompiler = "androidx.room:room-compiler:${Versions.room}"
     val roomRunTime = "androidx.room:room-runtime:${Versions.room}"
@@ -69,6 +78,12 @@ object Libraries {
     val httpLoggingInterceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.okHttp}"
     // GLIDE
     val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
+    // SCARLET
+    val scarlet = "com.tinder.scarlet:scarlet:${Versions.scarlet}"
+    val scarletWebSocket = "com.tinder.scarlet:websocket-okhttp:${Versions.scarlet}"
+    val scarletAdapter = "com.tinder.scarlet:message-adapter-gson:${Versions.scarlet}"
+    val scarletCoroutine = "com.tinder.scarlet:stream-adapter-coroutines:${Versions.scarlet}"
+    val scarletLifecycle = "com.tinder.scarlet:lifecycle-android:${Versions.scarlet}"
 }
 
 object KotlinLibraries {
@@ -83,11 +98,17 @@ object AndroidLibraries {
     val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
     val coreKtx = "androidx.core:core-ktx:${Versions.coreKtx}"
     val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
+    val lifecycleLiveData = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycle}"
     val lifecycleViewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle}"
     val lifecycleExtensions = "androidx.lifecycle:lifecycle-extensions:${Versions.lifecycle}"
-    val recyclerView = "androidx.recyclerview:recyclerview:${Versions.recyclerview}"
+    val lifecycleCommon = "androidx.lifecycle:lifecycle-common-java8:${Versions.lifecycle}"
+    val recyclerView = "com.github.mike14u:shimmer-recyclerview-x:${Versions.recyclerview}"
     val navigation = "androidx.navigation:navigation-ui-ktx:${Versions.nav}"
     val navigationFrag = "androidx.navigation:navigation-fragment-ktx:${Versions.nav}"
+    val activity = "androidx.activity:activity-ktx:${Versions.activity}"
+    val fragment = "androidx.fragment:fragment-ktx:${Versions.fragment}"
+    val material = "com.google.android.material:material:${Versions.material}"
+    val swipe = "androidx.swiperefreshlayout:swiperefreshlayout:${Versions.swipe}"
 }
 
 object TestLibraries {

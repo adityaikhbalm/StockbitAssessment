@@ -1,7 +1,7 @@
 package com.stockbit.remote.base
 
-import com.stockbit.remote.ExampleService
-import com.stockbit.remote.di.createRemoteModule
+import com.stockbit.remote.RemoteService
+import com.stockbit.remote.di.remoteModule
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
 import org.junit.After
@@ -14,7 +14,7 @@ import java.io.File
 
 abstract class BaseTest: KoinTest {
 
-    protected val exampleService: ExampleService by inject()
+    protected val remoteService: RemoteService by inject()
     protected lateinit var mockServer: MockWebServer
 
     @Before
@@ -31,7 +31,7 @@ abstract class BaseTest: KoinTest {
 
     // CONFIGURATION
     private fun configureDi(){
-        startKoin {listOf(createRemoteModule(mockServer.url("/").toString()))}
+        startKoin {listOf(remoteModule)}
     }
 
     private fun configureMockServer(){

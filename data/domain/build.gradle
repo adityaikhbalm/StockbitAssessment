@@ -1,0 +1,15 @@
+apply plugin: 'com.android.library'
+apply from: '../../android_commons.gradle'
+apply plugin: 'kotlin-kapt'
+
+dependencies {
+    // MODULES
+    api project(Modules.repository)
+    api project(Modules.model)
+    // ANDROID
+    implementation KotlinLibraries.kotlinCoroutineCore
+    implementation AndroidLibraries.kotlinCoroutineAndroid
+    implementation AndroidLibraries.lifecycleExtensions
+    // KOIN
+    implementation Libraries.koin
+}

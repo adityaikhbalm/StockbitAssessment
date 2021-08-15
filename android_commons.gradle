@@ -17,6 +17,16 @@ android {
             minifyEnabled true
         }
     }
+
+    buildTypes.forEach {
+        it.buildConfigField('String', 'API_BASE_URL', '"https://min-api.cryptocompare.com/data/"')
+        it.buildConfigField('String', 'WS_BASE_URL', '"wss://streamer.cryptocompare.com/v2"')
+        it.buildConfigField('String', 'TOKEN', '"7d2fc1e4a5ef9bb3d83db4dd969137f9b58cff6ef5badcd3186751915df10e97"')
+    }
+
+    kotlinOptions.freeCompilerArgs += [
+            "-Xuse-experimental=kotlinx.coroutines.ExperimentalCoroutinesApi",
+            "-Xuse-experimental=kotlinx.coroutines.ObsoleteCoroutinesApi"]
 }
 
 dependencies {

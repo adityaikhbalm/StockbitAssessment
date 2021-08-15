@@ -1,9 +1,17 @@
 apply plugin: 'com.android.library'
 apply from: '../android_commons.gradle'
 
+android {
+    buildFeatures.viewBinding = true
+}
+
 dependencies {
     implementation AndroidLibraries.appCompat
     implementation AndroidLibraries.navigation
     implementation AndroidLibraries.navigationFrag
+    implementation AndroidLibraries.lifecycleCommon
+    // KOIN
+    implementation Libraries.koin
+    implementation Libraries.koinViewModel
     implementation project(Modules.navigation)
 }

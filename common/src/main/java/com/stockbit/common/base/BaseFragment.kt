@@ -11,16 +11,20 @@ import com.google.android.material.snackbar.Snackbar
 import com.stockbit.common.extension.setupSnackbar
 import com.stockbit.common.utils.Event
 import com.stockbit.navigation.NavigationCommand
+import org.koin.androidx.viewmodel.ext.android.viewModel
+import kotlin.reflect.KClass
 
-abstract class BaseFragment: Fragment() {
+abstract class BaseFragment<VM : BaseViewModel>(
+    clazz: KClass<VM>, contentLayoutId: Int
+): Fragment(contentLayoutId) {
+
+    protected val viewModel: VM by viewModel(clazz = clazz)
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        observeNavigation(getViewModel())
-        setupSnackbar(this, getViewModel().snackBarError, Snackbar.LENGTH_LONG)
+        observeNavigation()
+        setupSnackbar(this, viewModel.snackBarError, Snackbar.LENGTH_LONG)
     }
-
-    abstract fun getViewModel(): BaseViewModel
 
     // UTILS METHODS ---
 
@@ -28,7 +32,7 @@ abstract class BaseFragment: Fragment() {
      * Observe a [NavigationCommand] [Event] [LiveData].
      * When this [LiveData] is updated, [Fragment] will navigate to its destination
      */
-    private fun observeNavigation(viewModel: BaseViewModel) {
+    private fun observeNavigation() {
         viewModel.navigation.observe(viewLifecycleOwner, Observer {
             it?.getContentIfNotHandled()?.let { command ->
                 when (command) {

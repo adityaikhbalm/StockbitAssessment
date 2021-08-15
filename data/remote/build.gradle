@@ -13,6 +13,12 @@ dependencies {
     implementation Libraries.retrofit
     implementation Libraries.retrofitGsonConverter
     implementation Libraries.httpLoggingInterceptor
+    // WEBSOCKET
+    implementation Libraries.scarlet
+    implementation Libraries.scarletWebSocket
+    implementation Libraries.scarletAdapter
+    implementation Libraries.scarletCoroutine
+    implementation Libraries.scarletLifecycle
     // DATA MODULE
     implementation project(Modules.model)
     // TEST

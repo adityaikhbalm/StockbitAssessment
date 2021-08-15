@@ -7,12 +7,17 @@ dependencies {
     implementation KotlinLibraries.kotlinCoroutineCore
     implementation AndroidLibraries.kotlinCoroutineAndroid
     // ANDROID
+    implementation AndroidLibraries.activity
+    implementation AndroidLibraries.fragment
     implementation AndroidLibraries.appCompat
     implementation AndroidLibraries.coreKtx
     implementation AndroidLibraries.constraintLayout
+    implementation AndroidLibraries.lifecycleLiveData
     implementation AndroidLibraries.lifecycleViewModel
     implementation AndroidLibraries.lifecycleExtensions
     implementation AndroidLibraries.recyclerView
+    implementation AndroidLibraries.material
+    implementation AndroidLibraries.swipe
     implementation AndroidLibraries.navigation
     implementation AndroidLibraries.navigationFrag
 }
