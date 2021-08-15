@@ -1,6 +1,5 @@
 package com.stockbit.features.home.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.asLiveData
@@ -11,10 +10,8 @@ import com.stockbit.domain.usecase.CryptoUseCase
 import com.stockbit.features.home.R
 import com.stockbit.model.CoinInfo
 import com.stockbit.model.SubscribeModel
-import com.stockbit.model.TickerModel
 import com.stockbit.repository.utils.Resource
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.channels.filter
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.flowOn
@@ -60,7 +57,7 @@ class HomeViewModel(
         )
         cryptoUseCase.subscribeCoinList(subscribeModel)
     }
-    
+
     val observeCoinList by lazy {
         cryptoUseCase.observeCoinList()
             .flowOn(Dispatchers.IO)

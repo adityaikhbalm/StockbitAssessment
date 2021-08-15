@@ -1,2 +1,1 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.stockbit.common"/>
+<manifest package="com.stockbit.common" />

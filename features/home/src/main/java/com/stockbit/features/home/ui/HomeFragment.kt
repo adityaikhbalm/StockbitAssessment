@@ -1,7 +1,6 @@
 package com.stockbit.features.home.ui
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -13,11 +12,10 @@ import com.stockbit.common.base.BaseFragment
 import com.stockbit.common.extension.hide
 import com.stockbit.common.extension.show
 import com.stockbit.common.extension.viewBinding
-import com.stockbit.features.home.viewmodel.HomeViewModel
 import com.stockbit.features.home.R
 import com.stockbit.features.home.adapter.HomeAdapter
 import com.stockbit.features.home.databinding.FragmentHomeBinding
-import com.stockbit.model.CoinInfo
+import com.stockbit.features.home.viewmodel.HomeViewModel
 import com.stockbit.repository.utils.Resource
 
 class HomeFragment : BaseFragment<HomeViewModel>(HomeViewModel::class, R.layout.fragment_home),

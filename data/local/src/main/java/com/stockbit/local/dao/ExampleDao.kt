@@ -1,7 +1,6 @@
 package com.stockbit.local.dao
 
 import androidx.room.Dao
-import androidx.room.Query
 import com.stockbit.model.CoinModel
 
 @Dao

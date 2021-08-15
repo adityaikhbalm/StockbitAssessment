@@ -1,26 +1,15 @@
 package com.stockbit.repository
 
-import android.util.Log
 import com.stockbit.local.dao.ExampleDao
-import com.stockbit.model.CoinModel
 import com.stockbit.model.CoinResponse
 import com.stockbit.model.SubscribeModel
 import com.stockbit.model.TickerModel
 import com.stockbit.remote.RemoteDatasource
 import com.stockbit.repository.utils.Resource
 import com.stockbit.repository.utils.fetch
-import com.stockbit.repository.utils.retryConnection
-import com.tinder.scarlet.WebSocket
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.channels.ReceiveChannel
-import kotlinx.coroutines.channels.awaitClose
-import kotlinx.coroutines.channels.consumeEach
-import kotlinx.coroutines.channels.filter
-import kotlinx.coroutines.coroutineScope
-import kotlinx.coroutines.flow.*
-import kotlinx.coroutines.launch
-import java.net.ConnectException
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.consumeAsFlow
+import kotlinx.coroutines.flow.flowOn
 
 interface CryptoRepository {
     suspend fun fetchTopTier(): Flow<Resource<CoinResponse>>

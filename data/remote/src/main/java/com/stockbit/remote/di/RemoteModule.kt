@@ -1,6 +1,5 @@
 package com.stockbit.remote.di
 
-import android.app.Application
 import com.google.gson.Gson
 import com.stockbit.remote.BuildConfig
 import com.stockbit.remote.RemoteDatasource
@@ -10,7 +9,6 @@ import com.stockbit.remote.utils.Constants.BACKOFF_DURATION_BASE
 import com.stockbit.remote.utils.Constants.BACKOFF_DURATION_MAX
 import com.stockbit.remote.utils.Constants.OKHTTP_CONNECT_TIMEOUT
 import com.stockbit.remote.utils.Constants.PARAM_API_KEY
-import com.stockbit.remote.utils.FlowStreamAdapter
 import com.tinder.scarlet.Scarlet
 import com.tinder.scarlet.messageadapter.gson.GsonMessageAdapter
 import com.tinder.scarlet.retry.ExponentialWithJitterBackoffStrategy
@@ -18,7 +16,6 @@ import com.tinder.scarlet.websocket.okhttp.newWebSocketFactory
 import com.tinder.streamadapter.coroutines.CoroutinesStreamAdapterFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

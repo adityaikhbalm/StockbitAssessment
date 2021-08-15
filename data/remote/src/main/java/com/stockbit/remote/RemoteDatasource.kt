@@ -9,10 +9,7 @@ class RemoteDatasource(
     private val remoteService: RemoteService,
     private val socketService: SocketService
 ) {
-
     suspend fun fetchTopTier() = remoteService.fetchTopTier()
-
-//    fun observeWebSocketConnection() = socketService.observeWebSocketConnection()
 
     fun subscribeCoinList(subscribeModel: SubscribeModel) =
         socketService.subscribeCoinList(subscribeModel)
